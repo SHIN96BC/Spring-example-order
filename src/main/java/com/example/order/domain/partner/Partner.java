@@ -1,5 +1,6 @@
 package com.example.order.domain.partner;
 
+import com.example.order.common.exception.InvalidParamException;
 import com.example.order.common.util.TokenGenerator;
 import com.example.order.domain.AbstractEntity;
 import jakarta.persistence.*;
@@ -39,9 +40,9 @@ public class Partner extends AbstractEntity {
     @Builder // 필드의 순서에 상관없이 명시적으로 값을 설정할 수 있고, 좀 더 유연하고 불변하는 객체를 만들 수 있어서 빌더 패턴을 사용
     public Partner(String partnerName, String businessNo, String email) {
         // String 빈값을 체크하는데 매번 작성하기 번거롭기 때문에 commons-lang를 사용(null과 length가 0인지 여부 체크)
-        if (StringUtils.isEmpty(partnerName)) throw new RuntimeException("empty partnerName");
-        if (StringUtils.isEmpty(businessNo)) throw new RuntimeException("empty businessNo");
-        if (StringUtils.isEmpty(email)) throw new RuntimeException("empty email");
+        if (StringUtils.isEmpty(partnerName)) throw new InvalidParamException("empty partnerName");
+        if (StringUtils.isEmpty(businessNo)) throw new InvalidParamException("empty businessNo");
+        if (StringUtils.isEmpty(email)) throw new InvalidParamException("empty email");
 
         this.partnerToken = TokenGenerator.randomCharacterWithPrefix(PREFIX_PARTNER);
         this.partnerName = partnerName;
