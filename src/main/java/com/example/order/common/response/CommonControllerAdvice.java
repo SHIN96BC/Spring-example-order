@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 
+/* @ControllerAdvice가 붙은 클래스는 스프링 mvc에서 마지막 응답이 넘어서 나가는 부분에 대한 exception을 최종적으로 처리하는 부분 */
+
 @Slf4j
 @ControllerAdvice
 public class CommonControllerAdvice {
@@ -27,6 +29,7 @@ public class CommonControllerAdvice {
     /**
      * http status: 500 AND result: FAIL
      * 시스템 예외 상황. 집중 모니터링 대상
+     * 아래에 명시되지 않은 모든 exception들은 여기를 최종적으로 통과
      *
      * @param e
      * @return
@@ -43,6 +46,7 @@ public class CommonControllerAdvice {
     /**
      * http status: 200 AND result: FAIL
      * 시스템은 이슈 없고, 비즈니스 로직 처리에서 에러가 발생함
+     * @ExceptionHandler에 의해 BaseException과 BaseException을 상속받은 exception들이 여기를 최종적으로 통과
      *
      * @param e
      * @return
