@@ -31,6 +31,7 @@ public class Item extends AbstractEntity {
     private String itemName;
     private Long itemPrice;
 
+    // mappedBy에는 itemOptionGroup쪽에서 이 item을 표현하는 property명을 할당
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "item", cascade = CascadeType.PERSIST)
     private List<ItemOptionGroup> itemOptionGroupList = Lists.newArrayList();
 

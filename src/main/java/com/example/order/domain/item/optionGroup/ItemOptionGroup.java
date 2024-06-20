@@ -31,6 +31,7 @@ public class ItemOptionGroup extends AbstractEntity {
     private Integer ordering;
     private String itemOptionGroupName;
 
+    // mappedBy에는 itemOption쪽에서 이 itemOptionGroup을 표현하는 property명을 할당
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "itemOptionGroup", cascade = CascadeType.PERSIST)
     private List<ItemOption> itemOptionList = Lists.newArrayList();
 
