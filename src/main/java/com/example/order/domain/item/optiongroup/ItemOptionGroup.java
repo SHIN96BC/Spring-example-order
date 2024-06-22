@@ -1,4 +1,4 @@
-package com.example.order.domain.item.optionGroup;
+package com.example.order.domain.item.optiongroup;
 
 import com.example.order.common.exception.InvalidParamException;
 import com.example.order.domain.AbstractEntity;
