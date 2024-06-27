@@ -14,24 +14,29 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class OrderStoreImpl implements OrderStore {
 
+    private final OrderRepository orderRepository;
+    private final OrderItemRepository orderItemRepository;
+    private final OrderItemOptionGroupRepository orderItemOptionGroupRepository;
+    private final OrderItemOptionRepository orderItemOptionRepository;
+
     @Override
     public Order store(Order order) {
-        return null;
+        return orderRepository.save(order);
     }
 
     @Override
     public OrderItem store(OrderItem orderItem) {
-        return null;
+        return orderItemRepository.save(orderItem);
     }
 
     @Override
     public OrderItemOptionGroup store(OrderItemOptionGroup orderItemOptionGroup) {
-        return null;
+        return orderItemOptionGroupRepository.save(orderItemOptionGroup);
     }
 
     @Override
     public OrderItemOption store(OrderItemOption orderItemOption) {
-        return null;
+        return orderItemOptionRepository.save(orderItemOption);
     }
 
 }

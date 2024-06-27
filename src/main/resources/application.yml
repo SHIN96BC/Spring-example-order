@@ -16,6 +16,7 @@ spring:
       username: order-svc
       password: order-pass
   flyway:
+    locations: classpath:db/migration
     user: order-svc
     password: order-pass
     schemas: order

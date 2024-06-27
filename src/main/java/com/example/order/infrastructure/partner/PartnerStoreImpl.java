@@ -18,6 +18,6 @@ public class PartnerStoreImpl implements PartnerStore {
     public Partner store(Partner initPartner) {
         if (StringUtils.isEmpty(initPartner.getPartnerToken())) throw new InvalidParamException();
 
-        return null;
+        return partnerRepository.save(initPartner);
     }
 }

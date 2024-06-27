@@ -21,8 +21,8 @@ public class AbstractEntity {
         java.time.LocalDateTime만 지원하고 ZonedDateTime를 지원하지 않아서 hibernate 사용
     */
     @CreationTimestamp
-    private ZonedDateTime createAt;
+    private ZonedDateTime createdAt;
 
     @UpdateTimestamp
-    private ZonedDateTime updateAt;
+    private ZonedDateTime updatedAt;
 }

@@ -26,7 +26,7 @@ public class ItemOptionGroup extends AbstractEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "itm_")
+    @JoinColumn(name = "item_id")
     private Item item;
     private Integer ordering;
     private String itemOptionGroupName;
