@@ -20,6 +20,11 @@
   - domain layer의 코드들은 infrastructure의 기술 요구사항에 변동이 생겨도 수정하지 않을 수 있도록 작성되어야 한다.
 - infrastructure layer
 
+## 각 레이어별 요구 클래스 정리
+ - XXXCommand == 명령 성격
+ - XXXCriteria == 조회 성격
+ - XXXInfo == 객체에 대한 리턴
+
 ## map struct 라이브러리
 - mapping 라이브러리
 - 보통 복잡한 애플리케이션을 만들 때 각 레이어 별로 각자의 관심 분야만을 집중하게 관리하도록 관심사를 분리하여 개발해야지만 레이어별로 로직을 갈아 끼우기 쉽고, 각 레이어의 독립성이 보장됩니다.
